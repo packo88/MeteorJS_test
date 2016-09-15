@@ -1,23 +1,26 @@
 <template name="mainLayout">
-    {{#if currentUser}}
-    <p>
-        <a class="logout">Se déconnecter</a>
-    </p>
-    {{else}}
-    <p>
-        <a href="{{pathFor route='login'}}">Se connecter</a>
-    </p>
-    {{/if}}
-    {{> loginButtons}}
-    <h1>Mon site</h1>
-    <div>
-        <ul>
-            <li><a href="{{pathFor route='home'}}">Accueil</a></li>
-	        <li><a href="{{pathFor route='posts'}}">Posts</a></li>
-	        <li><a href="{{pathFor route='register'}}">Inscription</a></li>
-        </ul>
-    </div>
-    <div>
-        {{> yield}}
+    <div class="container">
+
+        {{#if currentUser}}
+        <p>
+            <a class="logout">Se déconnecter</a>
+        </p>
+        {{else}}
+        <p>
+            <a href="{{pathFor route='login'}}">Se connecter</a>
+        </p>
+        {{/if}}
+        {{> loginButtons}}
+        <h1>Mon site</h1>
+        <div>
+            <ul>
+                <li><a href="{{pathFor route='home'}}">Accueil</a></li>
+                <li><a href="{{pathFor route='posts'}}">Posts</a></li>
+                <li><a href="{{pathFor route='register'}}">Inscription</a></li>
+            </ul>
+        </div>
+        <div>
+            {{> yield}}
+        </div>
     </div>
 </template>

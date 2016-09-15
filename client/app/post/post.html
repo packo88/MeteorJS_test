@@ -1,8 +1,10 @@
 <template name='posts'>
     <h1>Liste des posts</h1>
     {{#each posts}}
-    {{> post}}
+         <!--include template en dessous-->
+        {{> post}}
     {{/each}}
+    {{> addPost}}
 </template>
 
 <template name="post">
@@ -13,4 +15,13 @@
         {{title}}, par {{{ setAuthor }}}
         {{/if}}
     </div>
+</template>
+
+<template name="addPost">
+    <div class="row">
+        <div class="col-md-6 well">
+            {{> quickForm collection="Posts" id="insertPostForm" type="insert"}}
+        </div>
+    </div>
+
 </template>

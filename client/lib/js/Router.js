@@ -41,3 +41,8 @@ Router.route('/', {
 Router.route('/user-register', {
 	name: 'register'
 });
+
+
+Router.route('/login', {
+	name: 'login'
+});

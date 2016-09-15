@@ -9,3 +9,11 @@ Template.post.events({
         alert("Vous avez cliqué")
     }
 });
+
+AutoForm.hooks({
+    postsInsertForm: { // ID du formulaire
+        onSuccess: function(formType, result) {
+            // Que faire après l'insertion/mise à jour ?
+        }
+    }
+});

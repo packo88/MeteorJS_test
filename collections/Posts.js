@@ -27,23 +27,12 @@ Posts.attachSchema(new SimpleSchema({
             else{
                 this.unset(); // Sinon on ne touche pas au champs
             }
+        },
+        autoform: { // Ne soit pas apparaitre dans le formulaire
+            omit: true
         }
     }
 }));
-
-
-Posts.allow({
-    insert: function(userId, doc){
-
-        if(doc.author !== "Bibi"){
-            throw new Meteor.Error(403, "Vous n'avez pas l'autorisation d'insérer un nouveau post !");
-        }
-        else{
-            return Posts.insert(doc); // Une insertion retourne le nouvel identifiant
-        }
-
-    }
-});
 
 
 Posts.allow({
