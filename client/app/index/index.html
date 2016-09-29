@@ -1,5 +1,5 @@
 <template name="home">
-    <h2>Accueil</h2>
+    <h2>Welcome</h2>
     <h3>Nouveau post</h3>
     <form>
         <label>Auteur</label><input type="text" name="auteur" /><br />
@@ -9,11 +9,21 @@
     </form>
     <h3>Liste des posts</h3>
 
-    <ul>
-        {{#each posts}}
-        <li><b>{{ title }}</b>, par <em>{{ author }}</em></li>
-        {{/each}}
-    </ul>
-
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="row">
+                <ul id="listPost">
+                    {{#each posts}}
+                        <li data-value="{{@index}}"><button class="remove">[x]</button>  <b>{{ title }}</b>, par <em>{{ author }}</em></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="rand">Try it</button>
+        <p id="demo"></p>
+    </div>
 
 </template>
+
